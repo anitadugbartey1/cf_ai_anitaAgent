@@ -1,0 +1,28 @@
+{
+  "name": "cf_ai_anitaagent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anitadugbartey1/cf_ai_anitaAgent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anitadugbartey1/cf_ai_anitaAgent/issues"
+  },
+  "homepage": "https://github.com/anitadugbartey1/cf_ai_anitaAgent#readme",
+  "devDependencies": {
+    "wrangler": "^4.59.2"
+  },
+  "dependencies": {
+    "@cloudflare/ai": "^1.2.2",
+    "hono": "^4.11.4"
+  }
+}
