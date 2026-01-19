@@ -6,7 +6,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   min-height: 100vh;
   color: #fff;
 }
@@ -25,13 +25,20 @@ header {
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  background: linear-gradient(90deg, #FF6B00, #FF8C00, #FFB800, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 header p {
-  color: #888;
+  color: #FFB800;
   font-size: 1.1rem;
 }
-
+p{
+  color: #FF6B00;
+  font-size: 0.9 rem; 
+}
 .main-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -45,17 +52,18 @@ header p {
   }
 }
 
-/* Tasks Panel */
+/* Panels */
 .tasks-panel, .chat-panel {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 150, 50, 0.05);
   border-radius: 16px;
   padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 150, 50, 0.2);
 }
 
 .tasks-panel h2, .chat-panel h2 {
   margin-bottom: 20px;
   font-size: 1.3rem;
+  color: #FFB800;
 }
 
 #tasks-list {
@@ -63,19 +71,21 @@ header p {
   overflow-y: auto;
 }
 
+/* Task Items */
 .task-item {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 12px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 150, 50, 0.1);
   border-radius: 8px;
   margin-bottom: 10px;
   transition: all 0.2s;
+  border-left: 3px solid #FF8C00;
 }
 
 .task-item:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 150, 50, 0.2);
 }
 
 .task-item.completed .task-text {
@@ -87,6 +97,7 @@ header p {
   width: 20px;
   height: 20px;
   cursor: pointer;
+  accent-color: #FF8C00;
 }
 
 .task-text {
@@ -98,16 +109,17 @@ header p {
   padding: 4px 8px;
   border-radius: 4px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
-.priority-high { background: #e74c3c; }
-.priority-medium { background: #f39c12; }
-.priority-low { background: #27ae60; }
+.priority-high { background: #FF6B00; }
+.priority-medium { background: #FF8C00; }
+.priority-low { background: #FFD700; color: #333; }
 
 .task-delete {
   background: none;
   border: none;
-  color: #e74c3c;
+  color: #FF6B00;
   cursor: pointer;
   font-size: 1.2rem;
   opacity: 0.5;
@@ -118,6 +130,7 @@ header p {
   opacity: 1;
 }
 
+/* Add Task Form */
 .add-task-form {
   display: flex;
   gap: 10px;
@@ -127,35 +140,47 @@ header p {
 .add-task-form input {
   flex: 1;
   padding: 12px;
-  border: none;
+  border: 1px solid rgba(255, 150, 50, 0.3);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 150, 50, 0.1);
   color: #fff;
   font-size: 1rem;
 }
 
+.add-task-form input:focus {
+  outline: none;
+  border-color: #FF8C00;
+}
+
 .add-task-form select {
   padding: 12px;
-  border: none;
+  border: 1px solid rgba(255, 150, 50, 0.3);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 150, 50, 0.1);
   color: #fff;
   cursor: pointer;
+}
+
+.add-task-form select:focus {
+  outline: none;
+  border-color: #FF8C00;
 }
 
 .add-task-form button, #send-btn {
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
-  background: #667eea;
+  background: linear-gradient(90deg, #FF6B00, #FF8C00);
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
+  font-weight: bold;
 }
 
 .add-task-form button:hover, #send-btn:hover {
-  background: #5a6fd6;
+  background: linear-gradient(90deg, #FF8C00, #FFB800);
+  transform: translateY(-1px);
 }
 
 /* Chat Panel */
@@ -177,12 +202,13 @@ header p {
 
 .message.user {
   align-self: flex-end;
-  background: #667eea;
+  background: linear-gradient(90deg, #FF6B00, #FF8C00);
 }
 
 .message.assistant {
   align-self: flex-start;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 150, 50, 0.15);
+  border: 1px solid rgba(255, 150, 50, 0.3);
 }
 
 .chat-input-container {
@@ -194,28 +220,52 @@ header p {
 #chat-input {
   flex: 1;
   padding: 12px;
-  border: none;
+  border: 1px solid rgba(255, 150, 50, 0.3);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 150, 50, 0.1);
   color: #fff;
   font-size: 1rem;
 }
 
-#chat-input::placeholder, .add-task-form input::placeholder {
-  color: #888;
+#chat-input:focus {
+  outline: none;
+  border-color: #FF8C00;
 }
 
-/* Loading */
+#chat-input::placeholder, .add-task-form input::placeholder {
+  color: #999;
+}
+
+/* Loading Animation */
 .loading {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 2px solid rgba(255,255,255,0.3);
+  border: 2px solid rgba(255, 150, 50, 0.3);
   border-radius: 50%;
-  border-top-color: #fff;
+  border-top-color: #FF8C00;
   animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 150, 50, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF8C00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFB800;
 }
