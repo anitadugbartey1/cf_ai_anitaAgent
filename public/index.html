@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anita's Productivity Agent</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🚀 Anita's Productivity Agent</h1>
+      <p>Your AI-powered task assistant</p>
+    </header>
+
+    <div class="main-content">
+      <!-- Task List -->
+      <div class="tasks-panel">
+        <h2>📋 My Tasks</h2>
+        <div id="tasks-list"></div>
+        <div class="add-task-form">
+          <input type="text" id="new-task-input" placeholder="Add a new task...">
+          <select id="priority-select">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button id="add-task-btn">Add</button>
+        </div>
+      </div>
+
+      <!-- Chat Interface -->
+      <div class="chat-panel">
+        <h2>💬 Chat with Agent</h2>
+        <div id="chat-messages"></div>
+        <div class="chat-input-container">
+          <input type="text" id="chat-input" placeholder="Ask me anything... (e.g., 'What should I work on?')">
+          <button id="send-btn">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

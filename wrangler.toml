@@ -1,0 +1,13 @@
+name = "cf-ai-anita-agent"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+assets = { directory = "./public" }
+
+[ai]
+binding = "AI"
+
+[[kv_namespaces]]
+binding = "TASKS"
+id = "753b07a438154659a4820e8eea083f9a"
